@@ -104,13 +104,13 @@ var datatableview = {
                 "sAjaxSource": datatable.attr('data-source-url'),
                 "fnInfoCallback": function(oSettings, iStart, iEnd, iMax, iTotal, sPre){
                     $("#" + datatable.attr('data-result-counter-id')).html(parseInt(iTotal).toLocaleString());
-                    if(typeof (opts.oLanguage.sInfo) != "undefined")
+                    if(typeof (opts.oLanguage) != "undefined" && typeof (opts.oLanguage.sInfo) != "undefined")
                         var infoString = opts.oLanguage.sInfo.replace('_START_', iStart).replace('_END_', iEnd).replace('_TOTAL_', iTotal);
                     else
                         var infoString="Showing "+iStart+" to "+iEnd+" of "+iTotal+" entries";
 
                     if (iMax != iTotal) {
-                        if(typeof (opts.oLanguage.sFilter) != "undefined")
+                        if(typeof (opts.oLanguage) != "undefined" && typeof (opts.oLanguage.sFilter) != "undefined")
                             infoString +=  " " + opts.oLanguage.sFilter.replace('_MAX_', iMax);
                         else
                             infoString += " (filtered from " + iMax + " total Paitents)";
