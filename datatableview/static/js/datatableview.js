@@ -137,6 +137,10 @@ var datatableview = {
             });
             try {
                 options = confirm_datatable_options(options, datatable);
+                if(opts.report_mode){
+                    options.sDom = opts.sDom;
+                    options.buttons = opts.buttons;
+                }
             } catch (e) {
 
             }
