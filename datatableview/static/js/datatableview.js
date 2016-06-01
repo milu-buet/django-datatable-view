@@ -115,6 +115,11 @@ var datatableview = {
                         else
                             infoString += " (filtered from " + iMax + " total Paitents)";
                     }
+
+                    if(typeof (opts) != "undefined" && typeof (opts.oLanguage) != "undefined" && typeof (opts.oLanguage.sInfoEmpty) != "undefined" && iTotal == 0){
+
+                        infoString = opts.oLanguage.sInfoEmpty;
+                    }
                     // /******************************************************************
                     //  * ##########       ###       ######         ###
                     //  * ##########     ###  ##     ###   ##     ###  ##
